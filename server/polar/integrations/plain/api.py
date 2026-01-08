@@ -10,8 +10,7 @@ from polar.postgres import AsyncSession, get_db_session
 from polar.routing import APIRouter
 
 from .schemas import CustomerCardsRequest, CustomerCardsResponse, PlainWebhookRequest
-from .service import plain as plain_service
-from .webhook_service import plain_webhook_service
+from .service import plain as plain_service, plain_webhook_service
 
 log = structlog.get_logger(__name__)
 

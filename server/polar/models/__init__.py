@@ -50,13 +50,14 @@ from .payment import Payment
 from .payment_method import PaymentMethod
 from .payout import Payout
 from .personal_access_token import PersonalAccessToken
-from .plain_message import (
+from .plain import (
     PlainMessage,
     PlainMessageChannel,
     PlainMessageDirection,
     PlainMessageSenderType,
+    PlainThread,
+    PlainThreadStatus,
 )
-from .plain_thread import PlainThread, PlainThreadStatus
 from .pledge import Pledge
 from .pledge_transaction import PledgeTransaction
 from .processor_transaction import ProcessorTransaction

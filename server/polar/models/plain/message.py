@@ -18,7 +18,7 @@ from sqlalchemy.orm import Mapped, declared_attr, mapped_column, relationship
 from polar.kit.db.models import RecordModel
 
 if TYPE_CHECKING:
-    from polar.models.plain_thread import PlainThread
+    from polar.models.plain.thread import PlainThread
 
 
 class PlainMessageDirection(StrEnum):

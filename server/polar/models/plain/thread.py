@@ -18,7 +18,7 @@ from polar.kit.db.models import RecordModel
 
 if TYPE_CHECKING:
     from polar.models import Customer, Organization, User
-    from polar.models.plain_message import PlainMessage
+    from polar.models.plain.message import PlainMessage
 
 
 class PlainThreadStatus(StrEnum):
