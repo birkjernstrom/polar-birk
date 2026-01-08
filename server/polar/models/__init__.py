@@ -50,6 +50,13 @@ from .payment import Payment
 from .payment_method import PaymentMethod
 from .payout import Payout
 from .personal_access_token import PersonalAccessToken
+from .plain_message import (
+    PlainMessage,
+    PlainMessageChannel,
+    PlainMessageDirection,
+    PlainMessageSenderType,
+)
+from .plain_thread import PlainThread, PlainThreadStatus
 from .pledge import Pledge
 from .pledge_transaction import PledgeTransaction
 from .processor_transaction import ProcessorTransaction
@@ -142,6 +149,12 @@ __all__ = [
     "PaymentMethod",
     "Payout",
     "PersonalAccessToken",
+    "PlainMessage",
+    "PlainMessageChannel",
+    "PlainMessageDirection",
+    "PlainMessageSenderType",
+    "PlainThread",
+    "PlainThreadStatus",
     "Pledge",
     "PledgeTransaction",
     "ProcessorTransaction",
