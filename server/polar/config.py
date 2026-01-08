@@ -267,6 +267,7 @@ class Settings(BaseSettings):
     PLAIN_REQUEST_SIGNING_SECRET: str | None = None
     PLAIN_TOKEN: str | None = None
     PLAIN_CHAT_SECRET: str | None = None
+    PLAIN_AI_DRAFTING_ENABLED: bool = True
 
     # AWS (File Downloads)
     AWS_ACCESS_KEY_ID: str = "polar-development"

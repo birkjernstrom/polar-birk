@@ -62,6 +62,7 @@ from polar.models.organization_review import OrganizationReview
 from polar.postgres import AsyncSession
 from polar.user.repository import UserRepository
 
+from .ai_drafting import plain_ai_drafting_service
 from .repository import PlainMessageRepository, PlainThreadRepository
 from .schemas import (
     CustomerCard,
@@ -1858,6 +1859,10 @@ class PlainWebhookService:
         await repository.create(message)
         await self._update_thread_message_timestamps(session, thread, sent_at)
 
+        # Generate AI draft for inbound messages
+        if direction == PlainMessageDirection.inbound:
+            await plain_ai_drafting_service.process_inbound_message(message, thread)
+
         return message
 
     async def _create_chat_message(
@@ -1909,6 +1914,10 @@ class PlainWebhookService:
         await repository.create(message)
         await self._update_thread_message_timestamps(session, thread, sent_at)
 
+        # Generate AI draft for inbound messages
+        if direction == PlainMessageDirection.inbound:
+            await plain_ai_drafting_service.process_inbound_message(message, thread)
+
         return message
 
     async def _create_slack_message(
@@ -1955,6 +1964,10 @@ class PlainWebhookService:
 
         await repository.create(message)
         await self._update_thread_message_timestamps(session, thread, sent_at)
+
+        # Generate AI draft for inbound messages
+        if direction == PlainMessageDirection.inbound:
+            await plain_ai_drafting_service.process_inbound_message(message, thread)
 
         return message
 
